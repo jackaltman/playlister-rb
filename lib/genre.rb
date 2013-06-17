@@ -1,11 +1,20 @@
 class Genre
-  attr_accessor :name, :songs
+  attr_accessor :name, :songs, :artists
+
+  GENRES = []
 
   def initialize
+    GENRES << self
     self.songs = []
-    Song.all.each do |song|
-      self.songs << song if self.name == song.genre
-    end
+    self.artists = []
+  end
+
+  def self.reset_genres
+    GENRES.clear
+  end
+
+  def self.all
+    GENRES
   end
 
 end
