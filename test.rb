@@ -1,5 +1,9 @@
 require_relative 'lib/artist'
 require_relative 'lib/song'
+<<<<<<< HEAD
+=======
+require_relative 'lib/genre'
+>>>>>>> 83ac8a29b39196963ca37d8ef5d1ff8e7470979a
 
 def test(title, &b)
   begin
