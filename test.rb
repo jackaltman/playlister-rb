@@ -1,4 +1,5 @@
 require_relative 'lib/artist'
+require_relative 'lib/song'
 
 def test(title, &b)
   begin
@@ -58,6 +59,7 @@ test "An artist has songs" do
 end
 
 test 'The Artist class can reset the artists that have been created' do
+
   assert Artist.reset_artists
   assert_equal Artist.count, 0
 end
