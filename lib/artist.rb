@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-class Artist
-end
-=======
 require_relative 'song'
 require_relative 'genre'
 
@@ -83,5 +79,3 @@ end
 
 
 
-
->>>>>>> adam_jack_2

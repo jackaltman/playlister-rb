@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-require '/../lib/artist'
-=======
 require_relative 'lib/artist'
 require_relative 'lib/song'
 require_relative 'lib/genre'
->>>>>>> adam_jack_2
+
 
 def test(title, &b)
   begin
