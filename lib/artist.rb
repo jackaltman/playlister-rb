@@ -36,6 +36,16 @@ class Artist
     song.genre.artists << self if song.genre && !(song.genre.artists.include?(self)) 
   end
 
+  def self.find_by(name)
+    a = ""
+    ARTISTS.each do |artist|
+      if artist.name == name
+         a = artist
+      end
+    end 
+    return a
+  end
+
 end
 
 # #Test 1

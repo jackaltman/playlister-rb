@@ -2,19 +2,29 @@ class Song
   attr_accessor :name, :artist
   attr_reader :genre
 
-  @@songs = []
+  SONGS = []
 
   def initialize
-    @@songs << self
+    SONGS << self
   end
 
   def self.all
-    @@songs
+    SONGS
   end
 
   def genre=(genre)
     @genre = genre
     genre.songs << self
+  end
+
+  def self.find_by(name)
+    a = ""
+    SONGS.each do |song|
+      if song.name == name
+         a = song
+      end
+    end 
+    return a
   end
 
 end
