@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 require '/../lib/artist'
+=======
+require_relative 'lib/artist'
+require_relative 'lib/song'
+require_relative 'lib/genre'
+>>>>>>> adam_jack_2
 
 def test(title, &b)
   begin
@@ -172,10 +178,33 @@ end
 # without your song class having this functionality, so go ahead and try
 # to use assert and assert_equal to write some tests.
 
-test 'Can initialize a song'
-test 'A song can have a name'
-test 'A song can have a genre'
-test 'A song has an artist'
+test 'Can initialize a song' do
+  assert Song.new
+end
+
+test 'A song can have a name' do
+  song = Song.new
+  song.name = "Use Somebody"
+  assert_equal song.name, "Use Somebody"
+end
+
+test 'An artist can have a name' do
+  artist = Artist.new
+  artist.name = "Adele"
+  assert_equal artist.name, "Adele"
+end
+
+test 'A song can have a genre' do 
+  song = Song.new
+  genre = Genre.new.tap{|g| g.name = 'rap'}
+  assert_equal genre.name, 'rap'
+end
+
+test 'A song has an artist' do
+  song = Song.new
+  song.artist = "Kanye"
+  assert_equal song.artist, "Kanye"
+end
 
 # Part 2: Site Generation Using ERB
 # write a ruby script that parses the data within the data directory
