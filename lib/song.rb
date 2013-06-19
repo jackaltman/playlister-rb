@@ -18,13 +18,13 @@ class Song
   end
 
   def self.find_by(name)
-    a = ""
+    song_search = ""
     SONGS.each do |song|
       if song.name == name
-         a = song
+         song_search = song
       end
     end 
-    return a
+    return song_search
   end
 
 end

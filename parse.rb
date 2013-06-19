@@ -59,6 +59,7 @@ require_relative 'lib/genre'
 # 1) Iterate through file and make an array of all the genres
 
 data = Dir.open('data').collect {|x| x } - [".", ".."]
+
 data_genres = []
 data.each do |song_info|
   song_genre = song_info.split("]").first.split("[").last
@@ -94,7 +95,9 @@ data.each do |song_info|
     if genre.name = song_genre
       new_song.genre = genre
     end
+    nothing = 0
   end
+  nothing =  0
 end
 
 artist_data = []
@@ -113,7 +116,12 @@ data.each do |song_info|
   artist_name = song_info.split("-").first.strip
   song_name = song_info.split("-")[1].split("[").first.strip
   song_genre = song_info.split("]").first.split("[").last
+  correct_artist = Artist.find_by(artist_name)
+  correct_song = Song.find_by(song_name)
+  correct_artist.add_song(correct_song)
 end
+
+data.collect {|x| x}
 
 
 
